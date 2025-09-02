@@ -1,5 +1,3 @@
-console.log("¡Hola, mundo! Este es mi primer proyecto con npm.");
-
 import app from './app.js';
 import {PORT} from './config.js';
 
