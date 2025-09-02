@@ -1,4 +1,9 @@
-import { Router } from "express";
+import { Router } from 'express';
+import { obtenerCategorias } from '../controllers/categotia.controllers.js';
 
-const routes = Router();
- export default routes;
+const router = Router();
+
+// Ruta para obtener todos los clientes
+router.get('/categorias', obtenerCategorias);
+
+export default router;
