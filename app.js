@@ -30,3 +30,4 @@ app.use((req, res, next) => {
 
 // Exportar la aplicación
 export default app;
+
