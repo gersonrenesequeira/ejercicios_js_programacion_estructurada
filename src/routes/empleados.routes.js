@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { obtenerCategorias } from '../controllers/categorias.controllers.js';
+import { obtenerEmpleados } from '../controllers/empleados.controllers.js';
 
 const router = Router();
 
 // Ruta para obtener todos los clientes
-router.get('/categorias', obtenerCategorias);
+router.get('/empleados', obtenerEmpleados);
 
 export default router;
