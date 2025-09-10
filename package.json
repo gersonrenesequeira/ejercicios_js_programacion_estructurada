@@ -1,9 +1,17 @@
 {
-  "name": "backend-practica-magdiel",
+  "name": "backend-practica-gerson",
   "version": "1.0.0",
-  "description": "backend practica xd",
-  "license": "ISC",
-  "author": "magdiel urbina",
+  "description": "backend practica",
+  "homepage": "https://github.com/MagdielU/backend-practica-magdiel#readme",
+  "bugs": {
+    "url": "https://github.com/MagdielU/backend-practica-magdiel/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagdielU/backend-practica-magdiel.git"
+  },
+  "license": "MIT",
+  "author": "gerson medina",
   "type": "module",
   "main": "index.js",
   "scripts": {
