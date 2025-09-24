@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { obtenerProductos, obtenerProducto } from '../controllers/productos.controllers.js';
+import { obtenerProductos, obtenerProducto, eliminarProducto } from '../controllers/productos.controllers.js';
 
 const router = Router();
 
@@ -10,3 +10,6 @@ router.get('/productos', obtenerProductos);
 router.get('/productos/:id_productos', obtenerProducto);
 
 export default router;
+
+// Eliminar un producto por su ID
+router.delete("/eliminarproducto/:id_producto", eliminarProducto);

@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { obtenerUsuarios, obtenerUsuario } from '../controllers/usuarios.controllers.js';
+import { obtenerUsuarios, obtenerUsuario, eliminarUsuario } from '../controllers/usuarios.controllers.js';
+import { eliminarProducto } from '../controllers/productos.controllers.js';
 
 const router = Router();
 
@@ -10,3 +11,6 @@ router.get('/usuarios', obtenerUsuarios);
 router.get('/usuarios/:id_usuarios', obtenerUsuario);
 
 export default router;
+
+// Eliminar un usuario por su ID
+router.delete("/eliminarusuario/:id_usuario", eliminarUsuario);

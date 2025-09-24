@@ -30,3 +30,28 @@ if (result.length <= 0) {
         });
     }
 };
+
+
+// Eliminar un detalle de venta por su ID
+export const eliminarDetalleVenta = async (req, res) => {
+  try {
+    const id_detalle_venta = req.params.id_detalle_venta;
+    const [result] = await pool.query(
+      "DELETE FROM detalles_ventas WHERE id_detalle_venta = ?",
+      [id_detalle_venta]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        mensaje: `No se encontró el detalle de venta con ID ${id_detalle_venta}`,
+      });
+    }
+
+    res.sendStatus(204);
+  } catch (error) {
+    return res.status(500).json({
+      mensaje: "Error al eliminar el detalle de venta.",
+      error: error,
+    });
+  }
+};

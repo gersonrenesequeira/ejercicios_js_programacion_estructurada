@@ -30,3 +30,27 @@ if (result.length <= 0) {
         });
     }
 };
+
+// Eliminar un empleado por su ID
+export const eliminarEmpleado = async (req, res) => {
+  try {
+    const id_empleado = req.params.id_empleado;
+    const [result] = await pool.query(
+      "DELETE FROM empleados WHERE id_empleado = ?",
+      [id_empleado]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        mensaje: `No se encontró el empleado con ID ${id_empleado}`,
+      });
+    }
+
+    res.sendStatus(204);
+  } catch (error) {
+    return res.status(500).json({
+      mensaje: "Error al eliminar el empleado.",
+      error: error,
+    });
+  }
+};

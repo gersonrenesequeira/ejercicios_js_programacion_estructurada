@@ -66,3 +66,28 @@ export const registrarCliente= async (req, res) => {
         });
     }
 };
+
+
+// clientes.controllers.js
+export const eliminarcliente = async (req, res) => {
+  try {
+    const id_venta = req.params.id_cliente;
+    const [result] = await pool.query(
+      "DELETE FROM clientes WHERE id_cliente = ?",
+       [id_cliente]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        mensaje: `No se encontró el cliente con ID ${req.params.id}`,
+      });
+    }
+
+    res.sendStatus(204);
+  } catch (error) {
+    return res.status(500).json({
+      mensaje: "Error al eliminar cliente",
+      error: error,
+    });
+  }
+};

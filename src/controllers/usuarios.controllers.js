@@ -30,3 +30,29 @@ if (result.length <= 0) {
         });
     }
 };
+
+
+
+// Eliminar un usuario por su ID
+export const eliminarUsuario = async (req, res) => {
+  try {
+    const id_usuario = req.params.id_usuario;
+    const [result] = await pool.query(
+      "DELETE FROM usuarios WHERE id_usuario = ?",
+      [id_usuario]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        mensaje: `No se encontró el usuario con ID ${id_usuario}`,
+      });
+    }
+
+    res.sendStatus(204);
+  } catch (error) {
+    return res.status(500).json({
+      mensaje: "Error al eliminar el usuario.",
+      error: error,
+    });
+  }
+};

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { obtenerEmpleados, obtenerEmpleado } from '../controllers/empleados.controllers.js';
+import { obtenerEmpleados, obtenerEmpleado, eliminarEmpleado } from '../controllers/empleados.controllers.js';
 
 const router = Router();
 
@@ -10,3 +10,8 @@ router.get('/empleados', obtenerEmpleados);
 router.get('/empleados/:id_empleados', obtenerEmpleado);
 
 export default router;
+
+
+
+// Eliminar un empleado por su ID
+router.delete("/eliminarempleado/:id_empleado", eliminarEmpleado);

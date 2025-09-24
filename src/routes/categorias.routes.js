@@ -13,3 +13,8 @@ router.get('/categoria/:id_categoria', obtenerCategoria);
 router.get('/registrarcategoria', registrarCategoria);
 
 export default router;
+
+import { eliminarCategoria } from "../controllers/categorias.controllers.js";
+
+// Ruta para eliminar un cliente por su ID
+router.delete('/eliminarcategoria/:id_categoria', eliminarCategoria);
